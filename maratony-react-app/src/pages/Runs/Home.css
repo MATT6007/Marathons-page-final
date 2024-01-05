@@ -1,0 +1,25 @@
+.app-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  
+.right-side {
+    flex: 2;
+    background-color: #076b78;
+    padding: 200px;
+    font-family: "Arial", sans-serif; 
+    font-size: 16px; 
+    font-weight: 400; 
+    color: #051f25; 
+  }
+
+  
+  
+.left-side {
+    flex: 5;
+    background-color: #4caf50;
+    padding: 200px;
+  }
+   
+   
