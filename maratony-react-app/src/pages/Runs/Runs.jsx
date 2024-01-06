@@ -55,6 +55,7 @@ const Runs = () => {
   const [selectedMarathon, setSelectedMarathon] = useState(null);
 
   const {isLogged} = useAuth()
+  const defaultDescription="Zapraszamy do udziału w zawodach."
 
   const handleMore = async (marathonId) => {
     try {
@@ -263,7 +264,8 @@ const Runs = () => {
                                             {marathon.name}
                                         </Typography>
                                         <Typography>
-                                            {marathon.body}
+                                            {/* {marathon.body} */}
+                                            {defaultDescription}
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
@@ -294,7 +296,7 @@ const Runs = () => {
                                     fontWeight: 'bold',
                                     cursor: 'pointer',
                                     textAlign: 'center',
-                                    fontSize: '18px'
+                                    fontSize: '28px'
                                 }}>
                                 More about competition
                             </Typography>

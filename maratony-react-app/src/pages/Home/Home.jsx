@@ -31,6 +31,7 @@ const Home = () => {
   const [marathon, setMarathon] = useState([]);
   const [sidebarArchives, setSidebarArchives] = useState([]);
   const [featuredPosts, setFeaturedPosts] = useState([]);
+  const defaultBody = "Zapraszamy do udziału w zawodach. "
 
   const [imageColor] = useState(null);
  
@@ -86,7 +87,8 @@ const Home = () => {
     const fetchedFeaturedPosts = marathon.slice(2, 4).map((marathon) => ({
       title: marathon.name,
       date: marathon.date,
-      description: marathon.body,
+      // description: marathon.body,
+      description: defaultBody,
       image: marathon.image,
       imageLabel: 'Image Text',
     }));

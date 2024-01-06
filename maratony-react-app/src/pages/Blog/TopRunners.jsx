@@ -23,7 +23,6 @@ const TopRunners = () => {
             <ul>
                 {topRunners.map((runner) => (
                     <li key={runner.ID_runner}>
-                        {/* Komponent wyświetlający pojedynczego topowego zawodnika */}
                         <TopRunnerItem runner={runner} />
                     </li>
                 ))}
