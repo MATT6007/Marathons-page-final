@@ -18,14 +18,6 @@ import { createToken, getUserData } from '../../hooks/hook'
 import { useAuth } from '../../contexts/AuthContext'
 
 export default function Sign() {
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     email: data.get('email'),
-  //     password: data.get('password'),
-  //   });
-  // };
 
   const [fname, setFname] = useState('')
   const [lname, setLname] = useState('')
@@ -34,7 +26,6 @@ export default function Sign() {
   const [phone, setPhone] = useState('')
   const [pass, setPass] = useState('')
   const [repass, setRepass] = useState('')
-  // const agreement = useRef()
   const [error, setError] = useState(false)
   
   const {setIsLogged} = useAuth();
@@ -52,7 +43,7 @@ export default function Sign() {
       password: pass
     }
 
-    const res = await fetch('http://localhost:8000/register',
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/register`,
     {
       method: "POST",
       headers: {
@@ -150,22 +141,6 @@ export default function Sign() {
       navigate('/home');
   }
 
-  // function CheckboxLabeled()
-  // {
-  //   const [checked, setChecked] = useState(false);
-
-  //   return (<div>
-  //     <FormControlLabel control={<Checkbox 
-  //     checked={checked}
-  //     ref={agreement}
-  //     required={true}
-  //     onChange={(e)=>setChecked(e.target.checked)}
-  //   />}
-  //   label="Akceptuję warunki umowy"
-  //   />
-  //   </div>
-  //   )
-  // }
 
   return (
       <Container component="main" maxWidth="xs">
