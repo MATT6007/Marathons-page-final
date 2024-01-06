@@ -10,7 +10,7 @@ import './Home.css';
 
 
 const mainFeaturedPost = {
-  title: 'Welocome on our marathon page',
+  title: 'Welcome on our marathon page',
   description:
     "We made it from love running. We enjoy, we appreciate, we will be focused.",
   image: 'https://source.unsplash.com/random?running',
