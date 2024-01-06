@@ -2,7 +2,7 @@ import * as React from 'react';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar/Navbar'
 import { AuthProvider } from './contexts/AuthContext';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Sign from './pages/Sign/Sign';
@@ -12,7 +12,6 @@ import Results from './pages/Results/Results.jsx';
 import Profile from './pages/Profile/Profile.jsx';
 
 function App() {
-  let isLogged = localStorage.getItem('user') !== null;
   console.log(localStorage.getItem('user') === null);
   return (
   <AuthProvider>

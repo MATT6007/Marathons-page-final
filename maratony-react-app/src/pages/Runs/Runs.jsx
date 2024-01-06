@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Link } from '@mui/material';
+import { Grid} from '@mui/material';
 import { useState, useEffect } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import './Home.css'
@@ -18,7 +18,7 @@ import CustomBanner from './CustomBanner.jsx';
 
 import Modal from '@mui/material/Modal';
 
-import { green, purple, blue, orange } from '@mui/material/colors';
+import { blue, orange } from '@mui/material/colors';
 
 export const defaultTheme = createTheme({
   palette: {
@@ -53,11 +53,8 @@ const Runs = () => {
 
   const [open, setOpen] = React.useState(false);
   const [selectedMarathon, setSelectedMarathon] = useState(null);
-  const [isCompetitionsVisible, setCompetitionsVisibility] = useState(false);
 
-  const [topRunners, setTopRunners] = useState([]);
-
-  const {isLogged, setIsLogged} = useAuth()
+  const {isLogged} = useAuth()
 
   const handleMore = async (marathonId) => {
     try {
@@ -89,8 +86,6 @@ const Runs = () => {
         setSelectedMarathon(false);
         handleOpen();
 
-        console.log(data);
-        alert(data.name + ' ' + data.ID_competition + ' ' + data.body);
     } catch (error) {
         console.error('Błąd podczas pobierania danych z API:', error);
     }
@@ -164,12 +159,6 @@ const Runs = () => {
         }
 
         return req;
-    };
-
-
-    const handleRegistrationForm = (marathonId) => {
-        setSelectedMarathon(marathonId); 
-        handleOpen(); 
     };
 
   

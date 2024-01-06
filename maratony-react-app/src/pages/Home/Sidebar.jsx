@@ -9,7 +9,7 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
 
 function Sidebar(props) {
   const { archives, description, title } = props;
-  const {isLogged, setIsLogged} = useAuth()
+  const {isLogged} = useAuth()
 
   return (
     <Grid 

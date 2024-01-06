@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, TextField, Button, Box, Typography, Avatar, FormControl, InputLabel, Select, MenuItem, Paper } from '@mui/material';
+import { Grid, TextField, Button, Box, Avatar, FormControl, InputLabel, Select, MenuItem, Paper } from '@mui/material';
 import axios from 'axios';
 import CustomBanner from './CustomBanner';
 import { toast } from 'react-toastify';
@@ -7,10 +7,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
 const Profile = () => {
-  const [user, setUser] = useState(null);
+  const [setUser] = useState(null);
   const [competitions, setCompetitions] = useState([]);
   const [club, setClub] = useState(null);
-  const [address, setAddress] = useState(null);
   const [city, setCity] = useState(null);
   const [street, setStreet] = useState(null);
   const [postalCode, setPostalCode] = useState(null);
@@ -59,10 +58,6 @@ const Profile = () => {
 
   const handleClubChange = (event) => {
     setClub(event.target.value);
-  };
-
-  const handleAddressChange = (event) => {
-    setAddress(event.target.value);
   };
 
   const handleImageUrlChange = (event) => {

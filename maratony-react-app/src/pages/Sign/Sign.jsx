@@ -11,22 +11,21 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { useState, useRef} from 'react'
+import { useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createToken, getUserData } from '../../hooks/hook'
 import { useAuth } from '../../contexts/AuthContext'
 
 export default function Sign() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
 
   const [fname, setFname] = useState('')
   const [lname, setLname] = useState('')
@@ -35,10 +34,10 @@ export default function Sign() {
   const [phone, setPhone] = useState('')
   const [pass, setPass] = useState('')
   const [repass, setRepass] = useState('')
-  const agreement = useRef()
+  // const agreement = useRef()
   const [error, setError] = useState(false)
   
-  const {setIsAdmin, setIsLogged} = useAuth();
+  const {setIsLogged} = useAuth();
   const navigate = useNavigate();
 
   const sendRegistrationData = async() =>
@@ -151,22 +150,22 @@ export default function Sign() {
       navigate('/home');
   }
 
-  function CheckboxLabeled()
-  {
-    const [checked, setChecked] = useState(false);
+  // function CheckboxLabeled()
+  // {
+  //   const [checked, setChecked] = useState(false);
 
-    return (<div>
-      <FormControlLabel control={<Checkbox 
-      checked={checked}
-      ref={agreement}
-      required={true}
-      onChange={(e)=>setChecked(e.target.checked)}
-    />}
-    label="Akceptuję warunki umowy"
-    />
-    </div>
-    )
-  }
+  //   return (<div>
+  //     <FormControlLabel control={<Checkbox 
+  //     checked={checked}
+  //     ref={agreement}
+  //     required={true}
+  //     onChange={(e)=>setChecked(e.target.checked)}
+  //   />}
+  //   label="Akceptuję warunki umowy"
+  //   />
+  //   </div>
+  //   )
+  // }
 
   return (
       <Container component="main" maxWidth="xs">

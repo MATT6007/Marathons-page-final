@@ -4,9 +4,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import {useEffect, useState} from 'react';
-import {Paper, Card, CardContent, CardMedia, iconClasses } from '@mui/material';
+import {Paper, Card, CardContent, CardMedia } from '@mui/material';
 import axios from 'axios';
-import TopRunners from './TopRunners';
 
 function formatDate(runner){
   const dateOfBirth = new Date(runner.date_of_birth);
@@ -20,7 +19,6 @@ function formatDate(runner){
 function Main(props) {
   const [competitionCategories, setCompetitionCategories] = useState([]);
   const [topRunners, setTopRunners] = useState([]);
-  const [imageUrl, setImageUrl] = useState(null);
   const sortedRunners = topRunners.sort((a, b) => b.races_participated - a.races_participated);
   const displayOrder = [1, 0, 2];
   const defaultIcon = 'https://st3.depositphotos.com/3538469/15750/i/450/depositphotos_157501024-stock-photo-business-man-icon.jpg';
@@ -57,8 +55,6 @@ function Main(props) {
     fetchTopRunners();
   }, []);
   
-
-  const { posts, title } = props;
 
   return (
     <Grid item xs={12} md={8}>

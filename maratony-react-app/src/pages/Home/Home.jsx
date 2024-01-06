@@ -7,21 +7,7 @@ import Main from '../Blog/Main';
 import Sidebar from './Sidebar';
 import { useState, useEffect } from 'react';
 import './Home.css'; 
-import ColorThief from 'colorthief';
 
-
-// const sections = [
-//   { title: 'Technology', url: '#' },
-//   { title: 'Design', url: '#' },
-//   { title: 'Culture', url: '#' },
-//   { title: 'Business', url: '#' },
-//   { title: 'Politics', url: '#' },
-//   { title: 'Opinion', url: '#' },
-//   { title: 'Science', url: '#' },
-//   { title: 'Health', url: '#' },
-//   { title: 'Style', url: '#' },
-//   { title: 'Travel', url: '#' },
-// ];
 
 const mainFeaturedPost = {
   title: 'Welocome on our marathon page',
@@ -33,8 +19,6 @@ const mainFeaturedPost = {
 };
 
 
-// const posts = [post1, post2, post3];
-
 const sidebar = {
   title: 'Marathons ahead',
   description:
@@ -42,31 +26,24 @@ const sidebar = {
 };
 
 
-// const defaultTheme = createTheme();
 
 const Home = () => {
   const [marathon, setMarathon] = useState([]);
   const [sidebarArchives, setSidebarArchives] = useState([]);
   const [featuredPosts, setFeaturedPosts] = useState([]);
 
-  const [imageColor, setImageColor] = useState(null);
+  const [imageColor] = useState(null);
  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Pobranie tokena z lokalnego składowania (lub innego źródła)
-        const token = localStorage.getItem('token'); // Przykładowe źródło tokena
+        const token = localStorage.getItem('token'); 
 
-        console.log("Token hereeeee");
-        console.log(token);
-
-        // Sprawdzenie, czy token istnieje
         if (!token) {
           console.log('User not logged in. Redirect to login page or handle accordingly.');
           return;
         }
 
-        // Dodanie nagłówka Authorization z tokenem do żądania
         const headers = {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -79,13 +56,10 @@ const Home = () => {
 
         if (!response.ok) {
           console.log('Error fetching data:', response.statusText);
-          // Handle errors accordingly
           return;
         }
 
         const jsonData = await response.json();
-        console.log("--------------------------------------")
-        console.log(jsonData);
         setMarathon(jsonData.items);
         
       } catch (error) {

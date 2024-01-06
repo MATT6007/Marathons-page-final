@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Table, TableContainer, TableHead, TableBody, TableRow, TableCell, Paper, Typography, Button } from '@mui/material';
+import { Table, TableContainer, TableHead, TableBody, TableRow, TableCell, Paper, Button } from '@mui/material';
 import ResultsRow from './ResultsRow';
 
 const CompetitionsTab = ({ isLogged }) => {

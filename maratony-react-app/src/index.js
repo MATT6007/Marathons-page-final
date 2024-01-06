@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './assets/index.css';
 import App from './App';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { pink, orange, red, blue } from '@mui/material/colors';
+import { orange, blue } from '@mui/material/colors';
 import { BrowserRouter } from 'react-router-dom';
 
 
@@ -17,21 +17,7 @@ export const websiteTheme = createTheme({
       main: blue[500],
     },
   },
-  // palette: {
-  //   mode: 'dark',
-  //   primary: {
-  //     main: blue[500],
-  //   },
-  // },
-  // breakpoints: {
-  //   values: {
-  //     xs: 0,
-  //     sm: 600,
-  //     md: 1020,
-  //     lg: 1200,
-  //     xl: 1536,
-  //   },
-  // },
+ 
   status: {
     danger: orange[500],
   },

@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CustomBanner = () => {
     const classes = useStyles();
-    const {isLogged, setIsLogged} = useAuth()
+    const {isLogged} = useAuth()
 
     return (
         <Container maxWidth="lg" className={classes.bannerContainer}>
