@@ -12,7 +12,6 @@ import Results from './pages/Results/Results.jsx';
 import Profile from './pages/Profile/Profile.jsx';
 
 function App() {
-  console.log(localStorage.getItem('user') === null);
   return (
   <AuthProvider>
     <div className="App">
